@@ -40,14 +40,14 @@
         </h3>
       </v-col>
 
-      <v-divider></v-divider>
+      <v-divider class="divider"></v-divider>
 
       <v-col id="content_bottom">
         <h2 class="text-h2 font-weight-bold">簡介</h2>
         <span class="ml-2">......</span>
       </v-col>
 
-      <v-divider></v-divider>
+      <v-divider class="divider"></v-divider>
 
       <v-col id="content_bottom_2">
         <h2 class="text-h2 font-weight-bold">照片</h2>
@@ -76,14 +76,14 @@
         <!--  <Carousel /> -->
       </v-col>
 
-      <v-divider></v-divider>
+      <v-divider class="divider"></v-divider>
 
       <v-col id="content_footer">
         <h2 class="text-h2 font-weight-bold">心得</h2>
         <span class="ml-2">......</span>
       </v-col>
 
-      <v-divider></v-divider>
+      <v-divider class="divider"></v-divider>
     </v-row>
     <!--
     <div class="py-14" />
