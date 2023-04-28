@@ -9,7 +9,7 @@
     <v-img height="300" src="@/assets/logo.svg" />
 
     <div class="text-body-2 font-weight-light mb-n1">講員:張傅義</div>-->
-        <h2 class="text-h1 font-weight-bold">張傅義</h2>
+        <h2 class="text-h1 font-weight-bold">張傳義</h2>
         <h3 class="ml-2">
           <p class="mb-1">
             <span>英華達工程開發總處資深協理</span>
