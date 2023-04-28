@@ -39,8 +39,52 @@
           discuss the distribution and evolution process of the consumer group.
         </h3>
       </v-col>
+
+      <v-divider></v-divider>
+
+      <v-col id="content_bottom">
+        <h2 class="text-h2 font-weight-bold">簡介</h2>
+        <span class="ml-2">......</span>
+      </v-col>
+
+      <v-divider></v-divider>
+
+      <v-col id="content_bottom_2">
+        <h2 class="text-h2 font-weight-bold">照片</h2>
+        <v-row dense>
+          <v-col v-for="card in 3">
+            <v-card>
+              <v-img
+                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                height="200px"
+                cover
+              ></v-img>
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-row dense>
+          <v-col v-for="card in 3">
+            <v-card>
+              <v-img
+                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                height="200px"
+                cover
+              ></v-img>
+            </v-card>
+          </v-col>
+        </v-row>
+        <!--  <Carousel /> -->
+      </v-col>
+
+      <v-divider></v-divider>
+
+      <v-col id="content_footer">
+        <h2 class="text-h2 font-weight-bold">心得</h2>
+        <span class="ml-2">......</span>
+      </v-col>
+
+      <v-divider></v-divider>
     </v-row>
-    <v-divider></v-divider>
     <!--
     <div class="py-14" />
     <v-row class="d-flex align-center justify-center">
@@ -92,7 +136,38 @@
   </v-responsive>
 </template>
 
-<script setup></script>
+<script setup>
+//import Carousel from "@/components/Carousel.vue";
+
+import { reactive } from "vue";
+
+const cards = reactive([
+  {
+    title: "Card 1",
+    src: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
+  },
+  {
+    title: "Card 2",
+    src: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+  },
+  {
+    title: "Card 3",
+    src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+  },
+  {
+    title: "Card 4",
+    src: "https://cdn.vuetifyjs.com/images/cards/sunset.jpg",
+  },
+  {
+    title: "Card 5",
+    src: "https://cdn.vuetifyjs.com/images/cards/sunset.jpg",
+  },
+  {
+    title: "Card 6",
+    src: "https://cdn.vuetifyjs.com/images/cards/sunset.jpg",
+  },
+]);
+</script>
 
 <style scoped>
 .divider {
