@@ -10,26 +10,19 @@
   </div>
 </template>
 
-<script>
-import { ref, watch } from "vue";
+<script setup>
+import { ref, watchEffect } from "vue";
 import { useWindowSize } from "@vueuse/core";
 
-export default {
-  setup() {
-    const drawer = ref(false);
-    const { width } = useWindowSize();
-    watch(width, (newWidth) => {
-      if (newWidth <= 600) {
-        drawer.value = true;
-      } else {
-        drawer.value = false;
-      }
-    });
-    return {
-      drawer,
-    };
-  },
-};
+const drawer = ref(false);
+const { width } = useWindowSize();
+watchEffect(() => {
+  if (width.value <= 600) {
+    drawer.value = true;
+  } else {
+    drawer.value = false;
+  }
+});
 </script>
 
 <style>
