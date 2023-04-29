@@ -1,7 +1,8 @@
 <template>
   <v-app color="my-custom-color">
-    <Navigation />
     <v-main>
+      <Tool_Bar />
+      <Navigation />
       <v-container class="fill-height">
         <Content />
       </v-container>
@@ -12,6 +13,7 @@
 <script setup>
 import Content from "@/components/Content.vue";
 import Navigation from "@/components/Navigation.vue";
+import Tool_Bar from "@/components/Tool_Bar.vue";
 </script>
 
 <style scoped>

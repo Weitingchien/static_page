@@ -1,14 +1,38 @@
 <template id="#content_top">
-  <v-navigation-drawer color="grey-darken-2" permanent name="drawer">
-    <!--<v-navigation-drawer color="my-nav-color" permanent name="drawer">-->
-    <div class="d-flex justify-center align-center h-100">
-      <v-list color="my-nav-color">
-        <v-list-item href="#content_top">講者介紹</v-list-item>
-        <v-list-item href="#content_mid">講題</v-list-item>
-        <v-list-item href="#content_bottom">簡介</v-list-item>
-        <v-list-item href="#content_bottom_2">照片</v-list-item>
-        <v-list-item href="#content_footer">心得</v-list-item>
-      </v-list>
-    </div>
-  </v-navigation-drawer>
+  <div v-if="drawer">
+    <v-navigation-drawer color="grey-darken-2" permanent name="drawer">
+      <!--<v-navigation-drawer color="my-nav-color" permanent name="drawer">-->
+      <div class="d-flex justify-center align-center h-100">
+        <v-list color="my-nav-color">
+          <v-list-item href="#content_top">講者介紹</v-list-item>
+          <v-list-item href="#content_mid">講題</v-list-item>
+          <v-list-item href="#content_bottom">簡介</v-list-item>
+          <v-list-item href="#content_bottom_2">照片</v-list-item>
+          <v-list-item href="#content_footer">心得</v-list-item>
+        </v-list>
+      </div>
+    </v-navigation-drawer>
+  </div>
 </template>
+
+<script>
+import { ref, watch } from "vue";
+import { useWindowSize } from "@vueuse/core";
+
+export default {
+  setup() {
+    const drawer = ref(false);
+    const { width } = useWindowSize();
+    watch(width, (newWidth) => {
+      if (newWidth >= 600) {
+        drawer.value = true;
+      } else {
+        drawer.value = false;
+      }
+    });
+    return {
+      drawer,
+    };
+  },
+};
+</script>

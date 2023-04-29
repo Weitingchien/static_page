@@ -1,7 +1,7 @@
 <template>
-  <v-responsive class="d-flex align-center fill-height">
+  <v-responsive class="d-flex align-center fill-height content">
     <v-row no-gutters>
-      <v-col id="content_top">
+      <v-col class="col" id="content_top">
         <!--
     <v-avatar color="white">
       <v-icon icon="mdi-account-circle"></v-icon>
@@ -23,7 +23,7 @@
 
       <v-divider class="divider"></v-divider>
 
-      <v-col id="content_mid">
+      <v-col class="col" id="content_mid">
         <h2 class="text-h2 font-weight-bold">講題</h2>
         <v-row class="d-flex align-center justify-start">
           <v-col>
@@ -42,14 +42,14 @@
 
       <v-divider class="divider"></v-divider>
 
-      <v-col id="content_bottom">
+      <v-col class="col" id="content_bottom">
         <h2 class="text-h2 font-weight-bold">簡介</h2>
         <span class="ml-2">......</span>
       </v-col>
 
       <v-divider class="divider"></v-divider>
 
-      <v-col id="content_bottom_2">
+      <v-col class="col" id="content_bottom_2">
         <h2 class="text-h2 font-weight-bold">照片</h2>
         <v-row dense>
           <v-col v-for="card in 3">
@@ -78,7 +78,7 @@
 
       <v-divider class="divider"></v-divider>
 
-      <v-col id="content_footer">
+      <v-col class="col" id="content_footer">
         <h2 class="text-h2 font-weight-bold">心得</h2>
         <span class="ml-2">......</span>
       </v-col>
@@ -180,5 +180,13 @@ h2 {
 
 h3 {
   padding: 15px 0px;
+}
+
+.content {
+  padding-top: 64px;
+}
+
+.col {
+  margin: 50px;
 }
 </style>
