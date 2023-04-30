@@ -27,17 +27,17 @@
         <h2 class="text-h2 font-weight-bold">講題</h2>
         <v-row class="d-flex align-center justify-start">
           <v-col>
-            <h3 class="ml-2">
-              Probabilistic Customer Purchase Evolution Graph
-            </h3>
+            <h3 class="ml-2">價值 - 工作相關、個人相關與創業相關</h3>
           </v-col>
           <v-col><span class="font-weight-thin">2023/05/01</span></v-col>
         </v-row>
+        <!--
         <h3 class="ml-2">
           Following evolutionary theory, this study defines the commodity
           consumption gene of the customer journey in retail transactions to
           discuss the distribution and evolution process of the consumer group.
         </h3>
+        -->
       </v-col>
 
       <v-divider class="divider"></v-divider>
