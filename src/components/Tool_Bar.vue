@@ -33,4 +33,12 @@ watchEffect(() => {
   right: 0;
   z-index: 999;
 }
+
+.v-toolbar {
+  display: flex;
+}
+
+.v-btn {
+  margin: auto;
+}
 </style>

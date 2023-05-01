@@ -2,13 +2,6 @@
   <v-responsive class="d-flex align-center fill-height content">
     <v-row no-gutters>
       <v-col class="col" id="content_top">
-        <!--
-    <v-avatar color="white">
-      <v-icon icon="mdi-account-circle"></v-icon>
-    </v-avatar>
-    <v-img height="300" src="@/assets/logo.svg" />
-
-    <div class="text-body-2 font-weight-light mb-n1">講員:張傅義</div>-->
         <h2 class="text-h1 font-weight-bold">張傳義</h2>
         <h3 class="ml-2">
           <p class="mb-1">
@@ -49,28 +42,25 @@
 
       <v-divider class="divider"></v-divider>
 
-      <v-col class="col" id="content_bottom_2">
+      <v-col class="col col_cards" id="content_bottom_2">
         <h2 class="text-h2 font-weight-bold">照片</h2>
         <v-row dense>
-          <v-col v-for="card in 3">
-            <v-card>
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                height="200px"
-                cover
-              ></v-img>
-            </v-card>
-          </v-col>
-        </v-row>
-        <v-row dense>
-          <v-col v-for="card in 3">
-            <v-card>
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                height="200px"
-                cover
-              ></v-img>
-            </v-card>
+          <v-col class="cards" v-for="card in cards">
+            <transition name="v-scale">
+              <v-card
+                v-if="showCard"
+                width="1477px"
+                height="1108px"
+                fill-height
+              >
+                <v-img
+                  :src="card.src"
+                  width="1477px"
+                  height="1108px"
+                  cover
+                ></v-img>
+              </v-card>
+            </transition>
           </v-col>
         </v-row>
         <!--  <Carousel /> -->
@@ -85,88 +75,46 @@
 
       <v-divider class="divider"></v-divider>
     </v-row>
-    <!--
-    <div class="py-14" />
-    <v-row class="d-flex align-center justify-center">
-      <v-col cols="auto">
-        <v-btn
-          href="https://vuetifyjs.com/components/all/"
-          min-width="164"
-          rel="noopener noreferrer"
-          target="_blank"
-          variant="text"
-        >
-          <v-icon icon="mdi-view-dashboard" size="large" start />
-
-          Components
-        </v-btn>
-      </v-col>
-
-      <v-col cols="auto">
-        <v-btn
-          color="primary"
-          href="https://vuetifyjs.com/introduction/why-vuetify/#feature-guides"
-          min-width="228"
-          rel="noopener noreferrer"
-          size="x-large"
-          target="_blank"
-          variant="flat"
-        >
-          <v-icon icon="mdi-speedometer" size="large" start />
-
-          Get Started
-        </v-btn>
-      </v-col>
-
-      <v-col cols="auto">
-        <v-btn
-          href="https://community.vuetifyjs.com/"
-          min-width="164"
-          rel="noopener noreferrer"
-          target="_blank"
-          variant="text"
-        >
-          <v-icon icon="mdi-account-group" size="large" start />
-
-          Community
-        </v-btn>
-      </v-col>
-    </v-row>
-  -->
   </v-responsive>
 </template>
 
 <script setup>
 //import Carousel from "@/components/Carousel.vue";
 
-import { reactive } from "vue";
+import { ref, reactive } from "vue";
 
 const cards = reactive([
   {
-    title: "Card 1",
-    src: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
-  },
-  {
-    title: "Card 2",
-    src: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-  },
-  {
-    title: "Card 3",
-    src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+    title: "Card 5",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/05.jpg",
   },
   {
     title: "Card 4",
-    src: "https://cdn.vuetifyjs.com/images/cards/sunset.jpg",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/04.jpg",
   },
   {
-    title: "Card 5",
-    src: "https://cdn.vuetifyjs.com/images/cards/sunset.jpg",
+    title: "Card 3",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/03.jpg",
+  },
+  {
+    title: "Card 2",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/02.jpg",
+  },
+  {
+    title: "Card 1",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/01.jpg",
   },
   {
     title: "Card 6",
-    src: "https://cdn.vuetifyjs.com/images/cards/sunset.jpg",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/06.jpg",
   },
 ]);
+
+const showCard = ref(false);
+
+setTimeout(() => {
+  showCard.value = true;
+}, 1500);
 </script>
 
 <style scoped>
@@ -188,5 +136,26 @@ h3 {
 
 .col {
   margin: 50px;
+}
+
+.col_cards {
+  width: 25%;
+  height: 25%;
+}
+.v-scale-enter-active,
+.v-scale-leave-active {
+  transition: transform 0.5s;
+}
+
+.v-scale-enter {
+  transform: scale(0);
+}
+
+.v-scale-enter-to {
+  transform: scale(1);
+}
+
+.v-scale-leave-to {
+  transform: scale(0);
 }
 </style>
