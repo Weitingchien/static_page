@@ -40,15 +40,28 @@
 
       <v-divider class="divider"></v-divider>
 
-      <v-col class="col" id="content_bottom_2">
+      <v-col class="col col_cards" id="content_bottom_2">
         <h2 class="text-h2 font-weight-bold">照片</h2>
         <v-row dense>
-          <v-col v-for="card in cards">
-            <v-card>
-              <v-img :src="card.src" cover></v-img>
-            </v-card>
+          <v-col class="cards" v-for="card in cards">
+            <transition name="v-scale">
+              <v-card
+                v-if="showCard"
+                width="1477px"
+                height="1108px"
+                fill-height
+              >
+                <v-img
+                  :src="card.src"
+                  width="1477px"
+                  height="1108px"
+                  cover
+                ></v-img>
+              </v-card>
+            </transition>
           </v-col>
         </v-row>
+        <!--  <Carousel /> -->
       </v-col>
 
       <v-divider class="divider"></v-divider>
@@ -78,26 +91,42 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+//import Carousel from "@/components/Carousel.vue";
+
+import { ref, reactive } from "vue";
 
 const cards = reactive([
   {
-    title: "Card 1",
-    src: "https://github.com/Weitingchien/images/blob/master/jpg/04.jpg?raw=true",
-  },
-  {
-    title: "Card 2",
-    src: "https://github.com/Weitingchien/images/blob/master/jpg/02.jpg?raw=true",
-  },
-  {
-    title: "Card 3",
-    src: "https://github.com/Weitingchien/images/blob/master/jpg/05.jpg?raw=true ",
+    title: "Card 5",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/05.jpg",
   },
   {
     title: "Card 4",
-    src: "https://github.com/Weitingchien/images/blob/master/jpg/03.jpg?raw=true",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/04.jpg",
+  },
+  {
+    title: "Card 3",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/03.jpg",
+  },
+  {
+    title: "Card 2",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/02.jpg",
+  },
+  {
+    title: "Card 1",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/01.jpg",
+  },
+  {
+    title: "Card 6",
+    src: "https://raw.githubusercontent.com/Weitingchien/images/master/jpg/06.jpg",
   },
 ]);
+
+const showCard = ref(false);
+
+setTimeout(() => {
+  showCard.value = true;
+}, 1500);
 </script>
 
 <style scoped>
@@ -121,8 +150,24 @@ h3 {
   margin: 50px;
 }
 
-.v-img {
-  width: 1477px;
-  height: 1108px;
+.col_cards {
+  width: 25%;
+  height: 25%;
+}
+.v-scale-enter-active,
+.v-scale-leave-active {
+  transition: transform 0.5s;
+}
+
+.v-scale-enter {
+  transform: scale(0);
+}
+
+.v-scale-enter-to {
+  transform: scale(1);
+}
+
+.v-scale-leave-to {
+  transform: scale(0);
 }
 </style>
