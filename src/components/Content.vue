@@ -2,13 +2,6 @@
   <v-responsive class="d-flex align-center fill-height content">
     <v-row no-gutters>
       <v-col class="col" id="content_top">
-        <!--
-    <v-avatar color="white">
-      <v-icon icon="mdi-account-circle"></v-icon>
-    </v-avatar>
-    <v-img height="300" src="@/assets/logo.svg" />
-
-    <div class="text-body-2 font-weight-light mb-n1">講員:張傅義</div>-->
         <h2 class="text-h1 font-weight-bold">張傳義</h2>
         <h3 class="ml-2">
           <p class="mb-1">
@@ -27,24 +20,22 @@
         <h2 class="text-h2 font-weight-bold">講題</h2>
         <v-row class="d-flex align-center justify-start">
           <v-col>
-            <h3 class="ml-2">
-              Probabilistic Customer Purchase Evolution Graph
-            </h3>
+            <h3 class="ml-2">價值 - 工作相關、個人相關與創業相關</h3>
           </v-col>
           <v-col><span class="font-weight-thin">2023/05/01</span></v-col>
         </v-row>
-        <h3 class="ml-2">
-          Following evolutionary theory, this study defines the commodity
-          consumption gene of the customer journey in retail transactions to
-          discuss the distribution and evolution process of the consumer group.
-        </h3>
       </v-col>
 
       <v-divider class="divider"></v-divider>
 
       <v-col class="col" id="content_bottom">
         <h2 class="text-h2 font-weight-bold">簡介</h2>
-        <span class="ml-2">......</span>
+        <h3 class="ml-2">
+          主要介紹公司內部的一些產品: Earbuds、Wifi Speaker、IoT/Module、Cloud
+          health Management device、商業模型:NPDI Services、Integrated
+          ODM、Contract
+          Manufacturing還有企業模式、個人管裡、職場管理，在最後的QA問答講師回答了一些問題，像是無法達到客戶需求的時候要如何解決，講師的回覆是有遇過客戶提出5個不相關的需求，持續65天無法解決，最後是雙方妥協，而如果是技術層面的問題通常都可以解決，還有關於人際關係上的取捨，講師建議可以去看博弈論（賽局理論）。
+        </h3>
       </v-col>
 
       <v-divider class="divider"></v-divider>
@@ -52,119 +43,59 @@
       <v-col class="col" id="content_bottom_2">
         <h2 class="text-h2 font-weight-bold">照片</h2>
         <v-row dense>
-          <v-col v-for="card in 3">
+          <v-col v-for="card in cards">
             <v-card>
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                height="200px"
-                cover
-              ></v-img>
+              <v-img :src="card.src" cover></v-img>
             </v-card>
           </v-col>
         </v-row>
-        <v-row dense>
-          <v-col v-for="card in 3">
-            <v-card>
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                height="200px"
-                cover
-              ></v-img>
-            </v-card>
-          </v-col>
-        </v-row>
-        <!--  <Carousel /> -->
       </v-col>
 
       <v-divider class="divider"></v-divider>
 
       <v-col class="col" id="content_footer">
         <h2 class="text-h2 font-weight-bold">心得</h2>
-        <span class="ml-2">......</span>
+        <h3 class="ml-2">講師提到的以下幾點令人印象深刻:</h3>
+        <h3 class="ml-2">
+          在介紹產品時提到了一個只需要2ml的血就可以偵測體內有癌細胞的可能性(循環腫瘤細胞機台)，還有南昌的團隊建立了一個雲端健康管理平台(在建立IoT雲端平台花費的成本非常之高)。
+        </h3>
+        <h3 class="ml-2">
+          在商業模式方面提到可以區分成運營管理、營銷管理、財會管理，而管理的核心是運用最小的資源，盡可能最大化的達成預定的目標。
+        </h3>
+        <h3 class="ml-2">
+          在個人管理上提到開放的心態，才能持續成長，並且要有系統性思維必須要有適應力、自組織、層次性。
+        </h3>
+        <h3 class="ml-2">
+          在職場管理最重要的就是理解需求，找到自己的位置，然後對於"商業"這一詞來說就是創造與傳遞價值，並從中獲取價值的過程。
+        </h3>
+        <h3 class="ml-2">
+          最後非常感謝講師的分享，不管在產品的介紹或是企業上都有新的啟發。
+        </h3>
       </v-col>
-
       <v-divider class="divider"></v-divider>
     </v-row>
-    <!--
-    <div class="py-14" />
-    <v-row class="d-flex align-center justify-center">
-      <v-col cols="auto">
-        <v-btn
-          href="https://vuetifyjs.com/components/all/"
-          min-width="164"
-          rel="noopener noreferrer"
-          target="_blank"
-          variant="text"
-        >
-          <v-icon icon="mdi-view-dashboard" size="large" start />
-
-          Components
-        </v-btn>
-      </v-col>
-
-      <v-col cols="auto">
-        <v-btn
-          color="primary"
-          href="https://vuetifyjs.com/introduction/why-vuetify/#feature-guides"
-          min-width="228"
-          rel="noopener noreferrer"
-          size="x-large"
-          target="_blank"
-          variant="flat"
-        >
-          <v-icon icon="mdi-speedometer" size="large" start />
-
-          Get Started
-        </v-btn>
-      </v-col>
-
-      <v-col cols="auto">
-        <v-btn
-          href="https://community.vuetifyjs.com/"
-          min-width="164"
-          rel="noopener noreferrer"
-          target="_blank"
-          variant="text"
-        >
-          <v-icon icon="mdi-account-group" size="large" start />
-
-          Community
-        </v-btn>
-      </v-col>
-    </v-row>
-  -->
   </v-responsive>
 </template>
 
 <script setup>
-//import Carousel from "@/components/Carousel.vue";
-
 import { reactive } from "vue";
 
 const cards = reactive([
   {
     title: "Card 1",
-    src: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
+    src: "https://github.com/Weitingchien/images/blob/master/jpg/04.jpg?raw=true",
   },
   {
     title: "Card 2",
-    src: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+    src: "https://github.com/Weitingchien/images/blob/master/jpg/02.jpg?raw=true",
   },
   {
     title: "Card 3",
-    src: "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+    src: "https://github.com/Weitingchien/images/blob/master/jpg/05.jpg?raw=true ",
   },
   {
     title: "Card 4",
-    src: "https://cdn.vuetifyjs.com/images/cards/sunset.jpg",
-  },
-  {
-    title: "Card 5",
-    src: "https://cdn.vuetifyjs.com/images/cards/sunset.jpg",
-  },
-  {
-    title: "Card 6",
-    src: "https://cdn.vuetifyjs.com/images/cards/sunset.jpg",
+    src: "https://github.com/Weitingchien/images/blob/master/jpg/03.jpg?raw=true",
   },
 ]);
 </script>
@@ -188,5 +119,10 @@ h3 {
 
 .col {
   margin: 50px;
+}
+
+.v-img {
+  width: 1477px;
+  height: 1108px;
 }
 </style>
